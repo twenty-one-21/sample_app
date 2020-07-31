@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
   before_action :check_logged_in_user, only: [:edit, :update]
+  before_action :check_logged_in_user, only: [:index, :edit, :update]
   before_action :check_correct_user, only: [:edit, :update]
   before_action :load_user, only: [:show, :edit, :update]
+
+  def index
+    @users = User.paginate(page: params[:page])
+  end
 
   def new
     @user = User.new
@@ -16,6 +21,12 @@ class UsersController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def show
   end
 
   def update
