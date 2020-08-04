@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   before_action :check_logged_in_user, only: [:index, :edit, :update, :destroy]
   before_action :check_correct_user, only: [:edit, :update]
   before_action :load_user, only: [:show, :edit, :update]
-  before_action :admin_user, only: :destroy
   before_action :access_admin_user, only: :destroy
 
   def index
@@ -25,6 +24,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def show
