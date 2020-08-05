@@ -1,6 +1,6 @@
 michael:
   name: Michael Example
-  email: example_722@railstutorial.org
+  email: michael@example.com
   password_digest: <%= User.digest("password") %>
   admin: true
 
