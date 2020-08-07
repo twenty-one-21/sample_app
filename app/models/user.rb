@@ -7,9 +7,9 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   validates :name, presence: true, length: { maximum: 50 }
 
+  before_create :create_activation_digest
   before_save { email.downcase! }
   before_save :downcase_email
-  before_create :create_activation_digest
 
   has_secure_password
 
