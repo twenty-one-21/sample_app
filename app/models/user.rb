@@ -8,7 +8,6 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 50 }
 
   before_create :create_activation_digest
-  before_save { email.downcase! }
   before_save :downcase_email
 
   has_secure_password
@@ -53,7 +52,7 @@ class User < ApplicationRecord
 
   private
     def downcase_email
-      self.email = email.downcase
+      email.downcase!
     end
 
     def create_activation_digest
