@@ -7,7 +7,6 @@
             <%= render "shared/error_messages" %>
 
             <%= hidden_field_tag :email, @user.email %>
-            <%= f.hidden_field :email, value: @user.email %>
 
             <%= f.label :password %>
             <%= f.password_field :password, class: "form-control" %>
