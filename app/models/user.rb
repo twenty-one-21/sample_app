@@ -12,7 +12,6 @@ class User < ApplicationRecord
   before_save :downcase_email
 
   has_secure_password
-  has_many :microposts
   has_many :microposts, dependent: :destroy
 
   def User.digest(string)
