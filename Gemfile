@@ -28,6 +28,7 @@ gem "mini_magick", "4.9.5"
 gem "bootstrap-will_paginate", "1.0.0"
 gem "faker", "2.1.2"
 gem "active_storage_validations", "0.8.2"
+gem "acts_as_votable", "~> 0.10.0"
 # gem "image_processing", "~> 1.2"
 gem "rails-controller-testing"
 # Reduces boot times through caching; required in config/boot.rb
