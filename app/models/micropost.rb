@@ -2,7 +2,7 @@ class Micropost < ApplicationRecord
   belongs_to :user
 
   has_one_attached :image
-  has_many :likes
+  has_many :likes, dependent: :destroy
   
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 140 }

@@ -87,7 +87,7 @@ class User < ApplicationRecord
   def following?(other_user)
     following.include?(other_user)
   end
-    
+
   private
     def downcase_email
       email.downcase!
