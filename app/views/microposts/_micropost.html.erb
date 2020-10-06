@@ -11,4 +11,8 @@
       <%= link_to "delete", micropost, method: :delete, data: { confirm: "You sure?" } %>
     <% end %>
   </span>
+  <span>
+    <%= link_to "like", method: :post %>
+    Got <%= @post.like.count %>
+  </span>
 </li>
