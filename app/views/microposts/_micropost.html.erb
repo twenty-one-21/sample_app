@@ -11,8 +11,10 @@
       <%= link_to "delete", micropost, method: :delete, data: { confirm: "You sure?" } %>
     <% end %>
   </span>
-    < <span>
-    <%= link_to "like", method: :get %>
-    Got <%= @micropost.likes.count %>
+  <span>
+    <%= form_with model: [micropost, micropost.likes.build] do |f| %>
+      <%= f.submit "Like", class: "btn btn-primary" %>
+    <% end %>
+    Got <%= micropost.likes.count %>
   </span>
 </li>
