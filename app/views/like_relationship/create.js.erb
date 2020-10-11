@@ -1,0 +1,2 @@
+$("#likes").html("<%= escape_javascript(render("posts/likes")) %>");
+$("#likes").html("<%= @user.likes.count %>");

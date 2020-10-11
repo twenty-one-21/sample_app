@@ -1,0 +1,6 @@
+<%= form_for(current_user.like.find_by(micropost_id: micropost.id),
+             html: { method: :delete }) do |f| %>
+  <%= button_tag( class: "btn btn-default") do %>
+    <%= content_tag :span, micropost.likes.count, class: "glyphicon glyphicon-heart" %>
+  <% end %>
+<% end %>

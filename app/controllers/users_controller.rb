@@ -58,6 +58,13 @@ class UsersController < ApplicationController
     render :show_follow
   end
 
+  def likes
+    @title = "Likes"
+    @users = User.find_by(params[:id])
+    @microposts = @user.likes.paginate(page: params[:page])
+    render :show_like
+  end
+
   private
 
     def load_user

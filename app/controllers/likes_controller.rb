@@ -1,10 +1,10 @@
-class LikeController < ApplicationController
-  before_action :check_logged_in_user, only: [:like]
+class LikesController < ApplicationController
+  before_action :check_logged_in_user, only: [:create]
 
   def create
     @post = Post.find_by(params[:post_id])
-    current_user.like(@post)
-    @like = Like.create(params[:like_id])
+    @user = User.find(params[:user_id])
+    @post.likes.new(user_id: current_user.id)
     if @like.save
       respond_to do |format|
         format.html {redirect_to :back}

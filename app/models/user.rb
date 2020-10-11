@@ -88,6 +88,18 @@ class User < ApplicationRecord
     following.include?(other_user)
   end
 
+  def create(post)
+    likes << post
+  end
+
+  def unlike(post)
+    like.find_by(post_id: @post.id).destroy
+  end
+
+  def likes?(post)
+    likes.include?(post)
+  end
+
   private
     def downcase_email
       email.downcase!

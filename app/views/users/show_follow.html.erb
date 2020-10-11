@@ -24,6 +24,11 @@
       <ul class="users follow">
         <%= render @users %>
       </ul>
+    <h3><%= @title %></h3>
+    <% if @user.likes.any? %>
+      <ul class="microposts">
+        <%= render @microposts %>
+      </ul>
       <%= will_paginate %>
     <% end %>
   </div>

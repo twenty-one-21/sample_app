@@ -300,3 +300,15 @@ span.image {
     border: 0;
   }
 }
+/* likes */
+
+.glyphicon-heart {
+  color: red;
+}
+.btn-default:hover > .glyphicon-heart-empty {
+  color: red;
+}
+.btn-default {
+  position: relative;
+  left: 60px;
+}

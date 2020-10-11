@@ -1,0 +1,1 @@
+<%= form_for(current_user.like.find_by(post_id: @post.id), html: { method: :delete }, remote: true) do |f| %>
