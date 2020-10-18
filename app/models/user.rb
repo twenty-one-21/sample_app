@@ -88,16 +88,8 @@ class User < ApplicationRecord
     following.include?(other_user)
   end
 
-  def create(post)
-    likes << post
-  end
-
-  def unlike(post)
-    like.find_by(post_id: @post.id).destroy
-  end
-
   def likes?(post)
-    likes.include?(post)
+    post.likes.where(user_id: current_user.id).any?
   end
 
   private
