@@ -17,4 +17,9 @@
     <% end %>
     Got <%= micropost.likes.count %>
   </span>
+  <span>
+    <%= form_with(model: micropost.likes.destroy, html: { :method => :delete } ) do |f| %>
+      <%= f.submit "Unlike", class: "btn btn-primary" %>
+    <% end %>
+  </span>
 </li>
