@@ -302,13 +302,11 @@ span.image {
 }
 /* likes */
 
-.glyphicon-heart {
-  color: red;
+.like-button {
+  width: 50px;
+  margin-top: 10px;
+  border-radius: 10px;
 }
-.btn-default:hover > .glyphicon-heart-empty {
-  color: red;
-}
-.btn-default {
-  position: relative;
-  left: 60px;
+.like-button:hover {
+  background-color: #337ab7;
 }
