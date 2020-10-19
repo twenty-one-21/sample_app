@@ -89,7 +89,7 @@ class User < ApplicationRecord
   end
 
   def likes?(post)
-    post.likes.where(user_id: current_user.id).any?
+    self.likes.exists(post_id: post.id)
   end
 
   private

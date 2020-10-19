@@ -1,6 +1,6 @@
 class LikesController < ApplicationController
   def create
-    @micropost = Micropost.find_by(id: params[:id])
+    @micropost = Micropost.find(params[:micropost_id])
     @like = @micropost.likes.new(user_id: current_user.id)
     if @like.save!
       flash[:success] = "Like created!"
@@ -11,8 +11,8 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    @like = Like.find_by(id: params[:id])
-    if @like.destoy
+    @like = Like.find(params[:id])
+    if @like.destroy!
       flash[:success] = "Unliked"
     else
       flash[:danger] = "Failed"
