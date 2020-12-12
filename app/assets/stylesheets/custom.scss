@@ -300,3 +300,12 @@ span.image {
     border: 0;
   }
 }
+/* likes */
+.like-button {
+  width: 50px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+.like-button:hover {
+  background-color: #337ab7;
+}

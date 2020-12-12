@@ -11,4 +11,18 @@
       <%= link_to "delete", micropost, method: :delete, data: { confirm: "You sure?" } %>
     <% end %>
   </span>
+  <span>
+  <% like = micropost.likes.find_by(user_id: current_user.id) %>
+  <% if like.present? %>
+    <%= form_with(model: [micropost, like], html: { method: :delete } ) do |f| %>
+      <%= f.hidden_field :id %>
+      <%= f.submit "Unlike", class: "like-button" %>
+    <% end %>
+  <% else %>
+    <%= form_with model: [micropost, micropost.likes.build] do |f| %>
+      <%= f.submit "Like", class: "like-button" %>
+    <% end %>
+  <% end %>
+  Got <%= micropost.likes.count %>
+</span>
 </li>
